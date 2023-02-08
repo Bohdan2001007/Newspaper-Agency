@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Topic list</h1>
+
+  <h3>Agency include such redactors:</h3>
+  {% for topic in topic_list %}
+    <ul>
+    <li>{{ topic.name }}</li>
+    </ul>
+  {% endfor %}
+
+{% endblock %}

@@ -1,13 +1,44 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
+<div class="bg-ex-gradient-animation">
+
+
 
 {% block content %}
-  <h1>Topic list</h1>
+  <h1>Topic list
+    <a href="{% url 'catalog:topic-create' %}">+</a>
+  </h1>
+  <form action="" method="get">
+    {{ search_form|crispy }}
+    <input type="submit" value="Search" class="btn btn-primary">
+  </form>
+  {% if topic_list %}
+    <table class="table">
+    <tr style="background-color: rgb(232, 205, 231);">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
 
-  <h3>Agency include such redactors:</h3>
-  {% for topic in topic_list %}
-    <ul>
-    <li>{{ topic.name }}</li>
-    </ul>
-  {% endfor %}
-
+      {% for topic in topic_list %}
+        <tr>
+        <td>
+          {{ topic.id }}
+        </td>
+          <td>
+          {{ topic.name }}
+          </td>
+          <td>
+          <a href="{% url "catalog:topic-update" pk=topic.id %} ">UPDATE</a>
+          </td>
+        <td>
+          <a href="{% url "catalog:topic-delete" pk=topic.id %} ">DELETE</a>
+        </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>There are no topic in agency</p>
+  {% endif %}
 {% endblock %}

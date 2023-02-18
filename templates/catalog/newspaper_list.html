@@ -1,16 +1,45 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
+
 
 {% block content %}
-  <h1>Newspaper List</h1>
+  <h1>Newspaper list
+  <a href="{% url 'catalog:newspaper-create' %}">+</a>
+  </h1>
+  <form action="" method="get">
+    {{ search_form|crispy }}
+    <input type="submit" value="Search" class="btn btn-primary">
+  </form>
 
   {% if newspaper_list %}
-    <ul>
+    <table class="table">
+    <tr style="background-color: rgb(232, 205, 231);">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
     {% for newspaper in newspaper_list %}
-      <li>
-        <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}</a>
-      </li>
+       <tr>
+        <td>
+          {{ newspaper.id }}
+        </td>
+          <td>
+          <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}</a>
+        </td>
+          <td>
+          {{ newspaper.content }}
+          </td>
+          <td>
+          <a href="{% url "catalog:newspaper-update" pk=newspaper.id %} ">UPDATE</a>
+          </td>
+         <td>
+          <a href="{% url "catalog:newspaper-delete" pk=newspaper.id %} ">DELETE</a>
+          </td>
+        </tr>
     {% endfor %}
-    </ul>
+    </table>
   {% else %}
     <p>There are no newspapers</p>
   {% endif %}

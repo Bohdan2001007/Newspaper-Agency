@@ -9,4 +9,12 @@ Django project that helps redactors to add/update/delete topics and newspapers i
 - source venv/bin/activate
 - pip install -r requirements.txt
 - python manage.py migrate
-- python manage.py runserver # starts Django Server
+- python manage.py runserver
+# Demo
+Use the following command to load prepared data from fixture to test and debug your code:
+python manage.py loaddata taxi_service_db_data.json
+
+After loading data from fixture you can use following superuser (or create another one by yourself):
+Login: admin.user
+Password: bestpassword
+Feel free to add more data using admin panel, if needed.

@@ -25,4 +25,4 @@ python manage.py loaddata taxi_service_db_data.json
 After loading data from fixture you can use following superuser (or create another one by yourself):
 Login: admin.user
 Password: bestpassword
-![Landing page] (https://github.com/Bohdan2001007/Newspaper-agency/blob/main/2020.40.52.png)
+![Landing page](https://github.com/Bohdan2001007/Newspaper-agency/blob/main/Landing%20page.png)

@@ -11,12 +11,10 @@ Django project that helps redactors to add/update/delete topics and newspapers i
 - python manage.py migrate
 - python manage.py runserver
 # Demo
-Login: admin.user
-Password: bestpassword
-
-python manage.py loaddata taxi_service_db_data.json
-
 After loading data from fixture you can use following superuser (or create another one by yourself):
+
 Login: admin.user
+
 Password: bestpassword
+
 ![Landing page](https://github.com/Bohdan2001007/Newspaper-agency/blob/main/Landing%20page.png)

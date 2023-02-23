@@ -1,5 +1,5 @@
 asgiref==3.6.0
-backports.zoneinfo==0.2.1
+backports.zoneinfo;python_version<"3.9"
 django-crispy-forms==2.0
 Django==4.1.7
 loginform==1.2.0

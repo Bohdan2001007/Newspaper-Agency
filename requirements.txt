@@ -1,11 +1,9 @@
 asgiref==3.6.0
-backports.zoneinfo;python_version<"3.9"
-django-crispy-forms==2.0
+backports.zoneinfo==0.2.1
+crispy-bootstrap5==0.7
 Django==4.1.7
+django-crispy-forms==2.0
 loginform==1.2.0
 lxml==4.9.2
-pip==23.0.1
-setuptools==67.3.3
+python-dotenv==0.21.1
 sqlparse==0.4.3
-wheel==0.38.4
-python-dotenv~=0.21.1

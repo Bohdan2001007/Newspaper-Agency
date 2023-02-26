@@ -207,4 +207,3 @@ def add_delete_redactor(request, pk):
         newspaper.redactors.add(request.user.id)
 
     return HttpResponseRedirect(reverse_lazy("catalog:newspaper-detail", args=[pk]))
-

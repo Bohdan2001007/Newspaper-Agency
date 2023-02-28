@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ["127.0.0.1", "https://newspaper-agency-06io.onrender.com/"]
+ALLOWED_HOSTS = ["127.0.0.1", "newspaper-agency-06io.onrender.com"]
 
 
 # Application definition

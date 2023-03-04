@@ -18,3 +18,9 @@ Login: admin.user
 Password: bestpassword
 
 ![Landing page](https://github.com/Bohdan2001007/Newspaper-agency/blob/main/Landing%20page.png)
+
+# Website
+Link of website: https://newspaper-agency-06io.onrender.com
+
+login: user
+password: user12345

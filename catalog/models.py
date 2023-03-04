@@ -6,6 +6,9 @@ from django.db import models
 class Topic(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
+    class Meta:
+        ordering = ["id"]
+
     def __str__(self):
         return self.name
 
@@ -16,6 +19,7 @@ class Redactor(AbstractUser):
     class Meta:
         verbose_name = "Redactor"
         verbose_name_plural = "Redactors"
+        ordering = ["id"]
 
     def __str__(self):
         return f"{self.username} ({self.first_name} {self.last_name})"

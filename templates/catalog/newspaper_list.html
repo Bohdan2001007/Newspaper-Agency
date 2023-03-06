@@ -4,7 +4,7 @@
 
 {% block content %}
   <h1>Newspaper list
-  <a href="{% url 'catalog:newspaper-create' %}">+</a>
+    <a href="{% url 'catalog:newspaper-create' %}">+</a>
   </h1>
   <form action="" method="get">
     {{ search_form }}
@@ -13,32 +13,32 @@
 
   {% if newspaper_list %}
     <table class="table">
-    <tr style="background-color: rgb(232, 205, 231);">
-      <th>ID</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Update</th>
-      <th>Delete</th>
-    </tr>
-    {% for newspaper in newspaper_list %}
-       <tr>
-        <td>
-          {{ newspaper.id }}
-        </td>
+      <tr style="background-color: rgb(232, 205, 231);">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      {% for newspaper in newspaper_list %}
+        <tr>
           <td>
-          <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}</a>
-        </td>
-          <td>
-          {{ newspaper.content }}
+            {{ newspaper.id }}
           </td>
           <td>
-          <a href="{% url "catalog:newspaper-update" pk=newspaper.id %} ">UPDATE</a>
+            <a href="{% url 'catalog:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}</a>
           </td>
-         <td>
-          <a href="{% url "catalog:newspaper-delete" pk=newspaper.id %} ">DELETE</a>
+          <td>
+            {{ newspaper.content }}
+          </td>
+          <td>
+            <a href="{% url "catalog:newspaper-update" pk=newspaper.id %} ">UPDATE</a>
+          </td>
+          <td>
+            <a href="{% url "catalog:newspaper-delete" pk=newspaper.id %} ">DELETE</a>
           </td>
         </tr>
-    {% endfor %}
+      {% endfor %}
     </table>
   {% else %}
     <p>There are no newspapers</p>

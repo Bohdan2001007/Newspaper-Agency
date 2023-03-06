@@ -3,17 +3,17 @@
 
 
 {% block content %}
-    <h1>Redactor List
-<a href="{% url 'catalog:redactor-create' %}">
+  <h1>Redactor List
+    <a href="{% url 'catalog:redactor-create' %}">
       +
-</a>
-    </h1>
-    <form action="" method="get" class="form-inline" novalidate>
-      {{ search_form }}
-      <input type="submit" value="Search" class="btn btn-primary">
-    </form>
+    </a>
+  </h1>
+  <form action="" method="get" class="form-inline" novalidate>
+    {{ search_form }}
+    <input type="submit" value="Search" class="btn btn-primary">
+  </form>
 
-    {% if redactor_list %}
+  {% if redactor_list %}
     <table class="table">
       <tr style="background-color:rgb(232, 205, 231)">
         <th>ID</th>
@@ -22,17 +22,18 @@
         <th>Last name</th>
         <th>Experience(years)</th>
       </tr>
-    {% for redactor in redactor_list %}
-      <tr>
-        <td>{{ redactor.id }}</td>
-        <td><a href="{% url 'catalog:redactor-detail' pk=redactor.id %}">{{ redactor.username }} {% if user == redactor %} (Me){% endif %}</a></td>
-        <td>{{ redactor.first_name }}</td>
-        <td>{{ redactor.last_name }}</td>
-        <td>{{ redactor.years_of_experience }}</td>
-      </tr>
-    {% endfor %}
+      {% for redactor in redactor_list %}
+        <tr>
+          <td>{{ redactor.id }}</td>
+          <td><a href="{% url 'catalog:redactor-detail' pk=redactor.id %}">{{ redactor.username }}
+            {% if user == redactor %} (Me){% endif %}</a></td>
+          <td>{{ redactor.first_name }}</td>
+          <td>{{ redactor.last_name }}</td>
+          <td>{{ redactor.years_of_experience }}</td>
+        </tr>
+      {% endfor %}
     </table>
-    {% else %}
-      <p>There are no redactors in the service.</p>
-    {% endif %}
+  {% else %}
+    <p>There are no redactors in the service.</p>
+  {% endif %}
 {% endblock %}

@@ -3,42 +3,41 @@
 <div class="bg-ex-gradient-animation">
 
 
-
-{% block content %}
-  <h1>Topic list
-    <a href="{% url 'catalog:topic-create' %}">+</a>
-  </h1>
-  <form action="" method="get">
-    {{ search_form }}
-    <input type="submit" value="Search" class="btn btn-primary">
-  </form>
-  {% if topic_list %}
-    <table class="table">
-    <tr style="background-color: rgb(232, 205, 231);">
-      <th>ID</th>
-      <th>Name</th>
-      <th>Update</th>
-      <th>Delete</th>
-    </tr>
-
-      {% for topic in topic_list %}
-        <tr>
-        <td>
-          {{ topic.id }}
-        </td>
-          <td>
-          {{ topic.name }}
-          </td>
-          <td>
-          <a href="{% url "catalog:topic-update" pk=topic.id %} ">UPDATE</a>
-          </td>
-        <td>
-          <a href="{% url "catalog:topic-delete" pk=topic.id %} ">DELETE</a>
-        </td>
+  {% block content %}
+    <h1>Topic list
+      <a href="{% url 'catalog:topic-create' %}">+</a>
+    </h1>
+    <form action="" method="get">
+      {{ search_form }}
+      <input type="submit" value="Search" class="btn btn-primary">
+    </form>
+    {% if topic_list %}
+      <table class="table">
+        <tr style="background-color: rgb(232, 205, 231);">
+          <th>ID</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
         </tr>
-      {% endfor %}
-    </table>
-  {% else %}
-    <p>There are no topic in agency</p>
-  {% endif %}
-{% endblock %}
+
+        {% for topic in topic_list %}
+          <tr>
+            <td>
+              {{ topic.id }}
+            </td>
+            <td>
+              {{ topic.name }}
+            </td>
+            <td>
+              <a href="{% url "catalog:topic-update" pk=topic.id %} ">UPDATE</a>
+            </td>
+            <td>
+              <a href="{% url "catalog:topic-delete" pk=topic.id %} ">DELETE</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>There are no topic in agency</p>
+    {% endif %}
+  {% endblock %}

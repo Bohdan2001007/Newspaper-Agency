@@ -6,7 +6,6 @@ from catalog.models import Redactor, Newspaper
 
 
 class RedactorCreateForm(forms.ModelForm):
-
     class Meta:
         model = Redactor
         fields = UserCreationForm.Meta.fields + (
@@ -15,7 +14,6 @@ class RedactorCreateForm(forms.ModelForm):
 
 
 class RedactorExperienceUpdateForm(forms.ModelForm):
-
     class Meta:
         model = Redactor
         fields = ("years_of_experience",)

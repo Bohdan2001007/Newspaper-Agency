@@ -7,7 +7,7 @@ from catalog.models import Topic, Newspaper
 
 class ModelsTests(TestCase):
     def test_topic_str(self):
-        topic = Topic.objects.create(name="Drama",)
+        topic = Topic.objects.create(name="Drama", )
 
         self.assertEqual(
             str(topic),
@@ -90,5 +90,3 @@ class PrivateTopicFormatTests(TestCase):
             list(topics)
         )
         self.assertTemplateUsed(response, "catalog/topic_list.html")
-
-

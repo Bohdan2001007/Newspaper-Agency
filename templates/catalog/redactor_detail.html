@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Name: {{ redactor.first_name }} {{ redactor.last_name }}
-  <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}" class="btn btn-danger link-to-page">Delete
+    <a href="{% url 'catalog:redactor-delete' pk=redactor.id %}" class="btn btn-danger link-to-page">Delete
     </a>
   </h1>
 
@@ -10,15 +10,16 @@
   <div class="ml-6">
     <h4>Information about redactor:</h4>
 
-  <p><strong>Redactor's id:</strong> {{ redactor.id }}</p>
-  <p><strong>Redactor's experience:</strong> {{ redactor.years_of_experience }} years <a href="{% url 'catalog:redactor-update' pk=redactor.id %}">Edit experience
+    <p><strong>Redactor's id:</strong> {{ redactor.id }}</p>
+    <p><strong>Redactor's experience:</strong> {{ redactor.years_of_experience }} years <a
+        href="{% url 'catalog:redactor-update' pk=redactor.id %}">Edit experience
     </a></p>
-  <h8><strong>Available newspapers titles:</strong></h8>
-  {% for newspaper in redactor.newspapers.all %}
-    <ul>
-    <li>{{ newspaper.title }}</li>
-    </ul>
+    <h8><strong>Available newspapers titles:</strong></h8>
+    {% for newspaper in redactor.newspapers.all %}
+      <ul>
+        <li>{{ newspaper.title }}</li>
+      </ul>
 
-  {% endfor %}
+    {% endfor %}
   </div>
 {% endblock %}

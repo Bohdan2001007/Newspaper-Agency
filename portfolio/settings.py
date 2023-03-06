@@ -10,17 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
-import dj_database_url
+import sys
 from pathlib import Path
+
+import dj_database_url
 from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = os.environ.get
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -29,9 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -79,9 +78,7 @@ TEMPLATES = [
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-
 WSGI_APPLICATION = 'portfolio.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -91,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'wrdsrtdl',
         'USER': 'wrdsrtdl',
-        'PASSWORD': 'QiipBubFuP3XhdXRX0TnPUjY-_PdTs0O',
+        'PASSWORD': os.environ.get('PASSWORD_DB'),
         'HOST': 'hattie.db.elephantsql.com',
         'PORT': '5432',
     },
@@ -138,7 +135,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -148,7 +144,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-
 STATIC_ROOT = "staticfiles/"
 
 # Default primary key field type
@@ -156,5 +151,7 @@ STATIC_ROOT = "staticfiles/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 ASSETS_ROOT = '/static/assets'
+
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'

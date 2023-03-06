@@ -197,6 +197,8 @@ def test_session_view(request):
         "<h1>Test Session</h1>"
         f"<h4>Session data: {request.session['newspaper']}</h4>"
     )
+
+
 @login_required
 def add_delete_redactor(request, pk):
     newspaper = Newspaper.objects.get(id=pk)

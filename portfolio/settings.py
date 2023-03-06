@@ -80,7 +80,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-# Database
+# Database fixed
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {

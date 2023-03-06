@@ -11,6 +11,12 @@ Django project that helps redactors to add/update/delete topics and newspapers i
 - python manage.py migrate
 - python manage.py runserver
 
+# Secret information in .env file
+
+- SECRET_KEY
+
+- PASSWORD_DB
+
 # Website
 
 Link of website: https://newspaper-agency-06io.onrender.com

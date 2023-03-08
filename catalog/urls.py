@@ -15,7 +15,6 @@ from catalog.views import (index,
                            RedactorDeleteView,
                            RedactorUpdateView,
                            RedactorCreateView,
-                           add_delete_redactor
                            )
 
 urlpatterns = [
@@ -67,11 +66,6 @@ urlpatterns = [
          name="redactor-update"),
     path("redactors/<int:pk>/delete/", RedactorDeleteView.as_view(),
          name="redactor-delete"),
-    path(
-        "redactors/<int:pk>/add_delete/",
-        add_delete_redactor,
-        name="add_delete_redactor"
-    )
 ]
 
 app_name = "catalog"

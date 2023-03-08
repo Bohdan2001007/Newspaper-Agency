@@ -145,7 +145,7 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 5
     queryset = Redactor.objects.all()
 
-    def get_context_data(self, *, object_list=None, **kwargs):
+    def get_context_data(self, *, object_list=None, **kwargs) -> dict:
         context = super(RedactorListView, self).get_context_data(**kwargs)
 
         username = self.request.GET.get("username", "")
@@ -156,7 +156,7 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
 
         return context
 
-    def get_queryset(self):
+    def get_queryset(self) -> None:
         username = self.request.GET.get("username")
 
         if username:
@@ -198,14 +198,3 @@ def test_session_view(request):
         f"<h4>Session data: {request.session['newspaper']}</h4>"
     )
 
-
-@login_required
-def add_delete_redactor(request, pk):
-    newspaper = Newspaper.objects.get(id=pk)
-
-    if Redactor.objects.get(id=request.user.id) in newspaper.redactors.all():
-        newspaper.redactors.remove(request.user.id)
-    else:
-        newspaper.redactors.add(request.user.id)
-
-    return HttpResponseRedirect(reverse_lazy("catalog:newspaper-detail", args=[pk]))

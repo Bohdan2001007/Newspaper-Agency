@@ -17,6 +17,8 @@ Django project that helps redactors to add/update/delete topics and newspapers i
 
 - PASSWORD_DB
 
+- You need to create .env file to store secret information
+
 # Website
 
 Link of website: https://newspaper-agency-06io.onrender.com

@@ -72,14 +72,13 @@ class PublicTopicFormatTest(TestCase):
 class PrivateTopicFormatTests(TestCase):
     def setUp(self) -> None:
         self.user = get_user_model().objects.create_user(
-            "test",
-            "password123",
+            "test3",
+            "password123444",
         )
         self.client.force_login(self.user)  # Тут мы логинимся
 
-    def test_retrieve_manufacturer(self):
-        Topic.objects.create(name="Politics")
-        Topic.objects.create(name="Sport")
+    def test_retrieve_topic(self):
+        Topic.objects.create(name="Politicsss")
 
         response = self.client.get(TOPIC_URL)
         topics = Topic.objects.all()

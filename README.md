@@ -27,4 +27,6 @@ login: user
 
 password: user12345
 
+# Landing page
+
 ![Landing page](https://github.com/Bohdan2001007/Newspaper-agency/blob/![](static/Landing page.png))

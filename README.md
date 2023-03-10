@@ -29,4 +29,4 @@ password: user12345
 
 <<<<<<< HEAD
 # Landing page
-![Landing page](/static/Landing page.png)
+![Landing page](/static/Landing_page.png)

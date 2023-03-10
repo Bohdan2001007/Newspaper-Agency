@@ -349,6 +349,6 @@ poetry.toml
 
 # ruff
 .ruff_cache/
-static/Landing page.png
+static/Landing_page.png
 static/drawio.png
 # End of https://www.toptal.com/developers/gitignore/api/python,django,pycharm+all

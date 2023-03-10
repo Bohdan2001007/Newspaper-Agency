@@ -5,8 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from catalog.models import Redactor, Newspaper
 
 
-class RedactorCreateForm(forms.ModelForm):
-    class Meta:
+class RedactorCreateForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
         model = Redactor
         fields = UserCreationForm.Meta.fields + (
             "password", "first_name", "last_name", "years_of_experience"

@@ -1,7 +1,7 @@
 # Newspaper-Agency
 Django project that helps redactors to add/update/delete topics and newspapers in a convenient service
 # Base structure of project 
-![Base structure](![Bohdan2001007](static/drawio.png))
+![Base structure]((static/drawio.png))
 # Installation
 - git clone https://github.com/Bohdan2001007/Newspaper-agency
 - cd Newspaper-agency
@@ -27,4 +27,4 @@ login: user
 
 password: user12345
 
-![Landing page](![Bohdan2001007](static/Landing page.png))
+![Landing page]((static/Landing page.png))

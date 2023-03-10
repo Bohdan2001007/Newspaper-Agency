@@ -29,4 +29,4 @@ password: user12345
 
 <<<<<<< HEAD
 # Landing page
-![Landing page](https://github.com/Bohdan2001007/Newspaper-agency/blob/main/static/Landing page.png)
+![Landing page](/static/Landing page.png)

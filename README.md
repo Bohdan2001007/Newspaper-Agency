@@ -23,10 +23,15 @@ Django project that helps redactors to add/update/delete topics and newspapers i
 
 Link of website: https://newspaper-agency-06io.onrender.com
 
+Use the following command to load prepared data from fixture to get demo access to the system:
+
+python manage.py loaddata Newspaper_Agency_db_data.json.
+
+After loading data from fixture you can use following superuser (or create another one by yourself):
+
 login: user
 
 password: user12345
 
-<<<<<<< HEAD
 # Landing page
 ![Landing page](/static/Landing_page.png)

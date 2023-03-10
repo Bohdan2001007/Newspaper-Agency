@@ -27,5 +27,7 @@ login: user
 
 password: user12345
 
+<<<<<<< HEAD
 # Landing page
 ![Base structure]((https://github.com/[Bohdan2001007]/static/drawio.png))
+
